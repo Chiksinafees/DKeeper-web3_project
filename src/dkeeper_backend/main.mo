@@ -20,4 +20,9 @@ actor DKeeper {
     notes := List.push(newNotes, notes);
     Debug.print(debug_show (notes));
   };
+
+  public query func readNotes() : async [Note] {  // async [Note] =>  return async array of Note
+    return List.toArray(notes)                    //  converting list into array
+  };
+
 };
